@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-1.12.1.js"></script>
+<script>
+//    var sliderAs = $(".slider").get(i).children;
+//    var zIndex = 0 ;
+//    var isStoped = false ;
+//    var timerId ;
+//    $(sliderAs).eq(0).css("opacity","1");
+//    var currentIndex = 0;
+//    var prevIndex = 0;
+//
+//    var slidernums = $(".slidernum").get(i).children;
+//    for (var j=0 ; j< slidernums.length; j++) {
+//        slidernums[j].index = j;
+//        slidernums[j].onclick = function() {
+//            prevIndex = currentIndex;
+//            currentIndex = this.index;
+//            slideTo(currentIndex);
+//        }
+//    }
+//
+//    function slideTo(index){
+//        var slidernums = $(".slidernum").get(i).children;
+//        $(slidernums[prevIndex]).css("background","#ccc");
+//        $(slidernums[index]).css("background","orangered");
+//        clearTimeout(timerId);
+//        if (isStoped) {
+//            return;
+//        }
+//        $(sliderAs[prevIndex]).animate( {
+//            opacity: 0
+//        });
+//        sliderAs[index].style.zIndex = ++zIndex;
+//        $(sliderAs[index]).animate( {
+//            opacity: 1
+//        },function(){
+//            timerId = setTimeout(function(){
+//                slideNext();
+//            },3000);
+//        });
+//    }
+//
+//    function slideNext() {
+//        prevIndex = currentIndex;
+//        if (currentIndex === sliderAs.length-1) {
+//            currentIndex = 0;
+//        } else {
+//            currentIndex++;
+//        }
+//        slideTo(currentIndex);
+//    }
+//
+//    function slidePrev(){
+//        prevIndex = currentIndex;
+//
+//        if (currentIndex === 0) {
+//            currentIndex = sliderAs.length-1;
+//        } else {
+//            currentIndex--;
+//        }
+//        slideTo(currentIndex);
+//    }
+//
+//    timerId = setTimeout(function(){
+//        slideNext();
+//    }, 3000);
+
+
+
+
+
+
+
+
+    var PicTotal = 3;
+    var CurrentIndex;
+    var ToDisplayPicNumber = 0;
+    $("div.pagination a").mouseenter(DisplayPic);
+
+    function DisplayPic(){
+        CurrentIndex = $(this).index();
+
+        $(this).parent().children().removeClass("bullet focus");
+        $(this).addClass("bullet focus");
+        var Pic = $(this).parent().parent().children("ul");
+        $(Pic).children().hide();
+        if(CurrentIndex>=1){
+            $(Pic).children("li").eq(CurrentIndex).fadeToggle(1000).show();
+        }else {
+            $(Pic).children("li").eq(CurrentIndex).show();
+        }
+
+    }
+    function PicNumMouseenter() {
+        $("div.pagination a").eq(ToDisplayPicNumber).trigger("mouseenter");
+        ToDisplayPicNumber = (ToDisplayPicNumber + 1) % PicTotal;
+        setTimeout("PicNumMouseenter()",4000);
+    }
+    setTimeout("PicNumMouseenter()",4000);
+
+</script>
+
+</body>
+</html>

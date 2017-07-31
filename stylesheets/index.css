@@ -1,0 +1,55 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	text-align: center;
+	background: url(../images/bg.jpg) no-repeat;
+	background-size: cover;
+}
+a{
+	text-decoration: none;
+	
+	font-family: "微软雅黑";
+	font-size: 16px;
+}
+
+#hr {
+	margin-top: 10%;
+	height: 17%;
+	width: 15%;
+	box-shadow: 6px 4px 10px #4f4e4e;
+	border-radius: 50%;
+	z-index: 100;
+}
+
+.per {
+	font-family: "arial narrow";
+	font-size: 20px;
+}
+
+#line {
+	margin: auto;
+	margin-bottom: 1%;
+	width: 70%;
+	height: 1px;
+	background: black;
+}
+
+#word {
+	font-family: "微软雅黑";
+	font-size: 16px;
+}
+
+#name {
+	font-family: "arial narrow";
+	font-size: 16px;
+}
+
+#gender {
+	font-family: "arial narrow";
+	font-size: 16px;
+}
+
+
+/*# sourceMappingURL=index.css.map */

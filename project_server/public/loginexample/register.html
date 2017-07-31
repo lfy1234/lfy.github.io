@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+<div>
+    <label>用户名:</label>
+    <input type="text" id="user" placeholder="请输入用户名"><span id="erro"></span><br/><br/>
+
+    <label>密&nbsp;码:</label>
+    <input type="text" id="password" placeholder="请输入密码"><span id="perro"></span><br/><br/>
+    <label>确认密码:</label>
+    <input type="text" id="passwordc" placeholder="请确认密码"><span id="pcerro"><br/><br/>
+
+			<button id="register">注册</button>
+			<a href="login.html">返回</a>
+</div>
+<script src="../vendor/jQuery/jquery-1.12.1.js"></script>
+
+<script>
+    $('#register').click(function(){
+
+
+        var user = $('#user').val();
+        var pw = $('#password').val();
+        $.ajax({
+            type: 'post',
+            url: '/api/register',
+            data: {
+                user: user,
+                password: pw
+            },
+            success: function (data) {
+                if (data.ret) {
+                    location.href = 'login.html';
+                }
+            },
+            error: function () {
+                console.log('error occurred');
+            }
+        })
+
+
+    });
+
+    var result = true;
+    $('#user').focus(function(){
+        $('#erro').hide();
+    });
+    $('#user').blur(function(){
+        if(checkUserReg()){
+            checkUserExsited();
+        }
+    });
+
+    $('#password').blur(function(){
+        checkPassword();
+    });
+
+    $('#passwordc').blur(function(){
+        checkPasswordc();
+    });
+
+    $('#user,#password,#passwordc').blur(function () {
+        if (result) {
+            $('#register').removeAttr('disabled');
+        }
+    })
+    function checkUserReg(){
+        var reg=/^[A-Za-z_]\w{5,19}$/;
+        if(reg.test($('#user').val())){
+            $('#register')[0].removeAttribute('disabled');
+            return true;
+        }
+        $('#erro').html("格式不正确").show();
+        result = false;
+        return false;
+        result = false;
+    }
+    function checkUserExsited(){
+        $.ajax({
+            type:'get',
+            url:'/api/checkUser',
+            data:{
+                user:$('#user').val()
+            },
+            success: function (data) {
+                if (data.ret) {
+                    $('#erro').html("√").show();
+                } else {
+                    $('#erro').html("用户已存在").show();
+                    result = false;
+                }
+            },
+
+            error: function (data) {
+                alert(data.ret);
+            }
+        })
+    }
+
+    function checkPassword(){
+        var level = 0;
+        var value = $('#password').val();
+        if (value.length >= 6) {
+            if (null !== value.match(/\d/)) {
+                level++;
+            }
+
+            if (null !== value.match(/[a-zA-Z]/)) {
+                level++;
+            }
+
+            if (null !== value.match(/[^a-zA-Z0-9]/)) {
+                level++;
+            }
+        }
+        if (level === 0) {
+            result = false;
+        }
+        var levelArr = ['请输入6位以上密码', '弱', '中', '强'];
+
+        $('#perro').html(levelArr[level]);
+    }
+
+    function checkPasswordc(){
+        var confirmV = $('#passwordc').val();
+        var pwV = $('#password').val();
+
+        if (pwV !== confirmV) {
+            $('#pcerro').html('两次密码不一致');
+            result = false;
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <link type="text/css" rel="stylesheet" href="style/css/index.css">
+    <script src="jquery-1.12.1.js"></script>
+    <script src="js/shoppingcar.js"></script>
+</head>
+<body>
+<!----------------------------------top---------------------------------------------------->
+<div class="top">
+    <div class="wrapped">
+        <div id="topleft">
+            <ul>
+                <li><span>你好, 欢迎光临戴欧尼珠宝网 !</span>
+                    <a href="login.html" id="login"> 登录</a>
+                    <span>/</span>
+                    <a href="register.html" id="register"> 注册 &nbsp; </a>
+                </li>
+                <li>
+                    <span> 体验中心 : </span>
+                    <a href="#"> 深圳分店 </a>
+                    <a href="#"> 切换</a>
+
+                </li>
+            </ul>
+        </div>
+        <div id="topright">
+            <ul>
+                <li><img src="resource/imgs/topimg (1).png" > <a href="#">我的戴欧尼</a></li>
+                <li><a href="#">我的珠宝箱</a></li>
+                <li><img src="resource/imgs/topimg (2).png" > <a href="#">正品认证</a></li>
+                <li><img src="resource/imgs/topimg (2).png" > <a href="#">预约进店</a></li>
+                <li><img src="resource/imgs/topimg (3).png" > <a href="#">手机版</a></li>
+                <li><img src="resource/imgs/topimg (4).png" > <a href="#">微信</a></li>
+                <li><img src="resource/imgs/topimg (5).png" > <a href="#">微博</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!----------------------------------header---------------------------------------------------->
+
+<div class="header">
+    <div class="wrapped">
+        <div id="logo"><img src="resource/imgs/logo.jpg" id="logoimg"></div>
+        <div id="search">
+            <div>
+                <input type="text" id="searchinput" placeholder="请输入型号或者名称">
+                <button id="searchbtn">搜索</button>
+            </div>
+            <ul>
+                <li><a href="#">永恒</a></li>
+                <li><a href="#">浪漫</a></li>
+                <li><a href="#">爱情</a></li>
+                <li><a href="#">一生</a></li>
+                <li><a href="#">蜜语</a></li>
+            </ul>
+
+        </div>
+        <div id="twocode">
+            <img src="resource/imgs/twocode.jpg" id="twocode1">
+            <img src="resource/imgs/twocode2.jpg" id="twocode2">
+            <span id="surprise">扫扫有惊喜</span>
+        </div>
+    </div>
+</div>
+
+
+<!----------------------------------menu---------------------------------------------------->
+
+<div class="menu">
+    <div class="wrapped">
+        <div id="secondmenu">
+            <h3>所有分类</h3>
+            <a href="#" id="ltgt"></a>
+        </div>
+
+
+
+        <div id="menunav">
+            <ul>
+                <li><a href="index.html"><h3>首页</h3></a></li>
+                <li><a href="#"><h3>裸钻</h3></a></li>
+                <li><a href="#"><h3>钻戒定制</h3></a></li>
+                <li><a href="#"><h3>定价产品</h3></a></li>
+                <li><a href="#"><h3>黄金</h3></a></li>
+                <li><a href="#"><h3>高端定制</h3></a></li>
+                <li><a href="#"><h3>优惠活动</h3></a></li>
+                <li><a href="#"><h3>珠宝百科</h3></a></li>
+            </ul>
+        </div>
+        <div id="phone"><img src="resource/imgs/phone.png" alt=""></div>
+    </div>
+</div>
+
+<!----------------------------------mybox---------------------------------------------------->
+<div class="mybox">
+    <div class="wrapped">
+        <div id="carbox">
+            <h3>我的珠宝箱</h3>
+        </div>
+        <div id="price">
+
+            <div id="jiesuan"><a href="#">去结算</a></div>
+            <div id="zongjia">总价:￥2221.00</div>
+        </div>
+
+        <div id="mulu">
+            <ul>
+                <li>商品</li>
+                <li>型号</li>
+                <li>尺寸</li>
+                <li>价格</li>
+                <li>操作</li>
+            </ul>
+            <table border="1" cellspacing="0" cellpadding="10">
+                <tbody class="cartbody">
+                <tr class="goshoppingHint">
+                    <td class="goodsimg" width="120" align="center"><img src="resource/imgs/tu/bigshenai.jpg"></td>
+                    <td class="goodsdes" width="250" align="center">深爱，材质：18K CRD040085D</td>
+                    <td class="goodsmodel" width="250" align="center">12k</td>
+                    <td class="goodsprice" width="250" align="center">2221</td>
+                    <td class="delGoods" width="200" align="center">删除</td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+
+    </div>
+</div>
+
+
+<!----------------------------------servers---------------------------------------------------->
+
+<div class="servers">
+    <div class="wrapped">
+        <img src="resource/imgs/serverimg.jpg">
+    </div>
+</div>
+
+
+<!----------------------------------bignav---------------------------------------------------->
+
+<div class="bignav">
+    <div class="wrapped">
+        <ul>
+            <li id="pay">
+                <dl>
+                    <dt><h4>购买支付</h4></dt>
+                    <dd><a href="#">新手教程</a></dd>
+                    <dd><a href="#">订购流程</a></dd>
+                    <dd><a href="#">支付常见问题</a></dd>
+
+
+                </dl>
+            </li>
+            <li id="received">
+                <dl>
+                    <dt><h4>收货指南</h4></dt>
+                    <dd><a href="#">订单处理时间</a></dd>
+                    <dd><a href="#">配送方法和收费</a></dd>
+                    <dd><a href="#">防伪包装</a></dd>
+
+
+                </dl>
+            </li>
+            <li id="aftersale">
+                <dl>
+                    <dt><h4>售后服务</h4></dt>
+                    <dd><a href="#">质量承诺</a></dd>
+                    <dd><a href="#">购物协议</a></dd>
+                    <dd><a href="#">售后服务</a></dd>
+
+
+                </dl>
+            </li>
+            <li id="vip">
+                <dl>
+                    <dt><h4>会员中心</h4></dt>
+                    <dd><a href="#">如何成为会员</a></dd>
+                    <dd><a href="#">积分规则</a></dd>
+                    <dd><a href="#">优惠政策</a></dd>
+
+
+                </dl>
+            </li>
+            <li id="about">
+                <dl>
+                    <dt><h4>关于戴欧尼</h4></dt>
+                    <dd><a href="#">戴欧尼介绍</a></dd>
+                    <dd><a href="#">戴欧尼资质</a></dd>
+                    <dd><a href="#">戴欧尼优势</a></dd>
+
+
+                </dl>
+            </li>
+            <li id="moreserver">
+                <dl>
+                    <dt><h4>更多服务</h4></dt>
+                    <dd><a href="#">鉴定机构</a></dd>
+                    <dd><a href="#">联系我们</a></dd>
+                    <dd><a href="#">网站地图</a></dd>
+
+
+                </dl>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<!----------------------------------contact---------------------------------------------------->
+
+<div class="contact">
+    <div class="wrapped">
+        <div>
+            <p class="address">体验中心地址：广东省深圳市南山区创业路中兴工业城9栋601 联系电话：4006578478</p>
+            <p>Copyright @ 2007-2014 深圳市戴欧妮网络科技有限公司 ALL Rights Reserved 经营许可证编号：粤B2-20080371 粤ICP备11058956号-1</p>
+        </div>
+        <div>
+            <p class="hotline">全球24小时服务热线</p>
+            <p class="No"><span>4006-578-478</span></p>
+        </div>
+    </div>
+</div>
+
+<!----------------------------------certificate---------------------------------------------------->
+
+<div class="certificate">
+    <div class="wrapped">
+        <a href="#"><img src="resource/imgs/footicon.gif" ></a>
+    </div>
+</div>
+
+<!----------------------------------nearscrollTop---------------------------------------------------->
+<div class="nst">
+    <div class="nearscrollTop"><a href="#"><img src="resource/imgs/sqkf.png"></a></div>
+    <div class="nearscrollTop"><a href="#"><img src="resource/imgs/shzx.png"></a></div>
+    <div class="nearscrollTop"><a href="#"><img src="resource/imgs/jmzx.png"></a></div>
+    <div id="nearscrollTop4"><a href="#"><img src="resource/imgs/ewm.png"></a></div>
+    <!--<div class="nearscrollTop"><a href="#"><img src="resource/imgs/fhdb.png"></a></div>-->
+</div>
+<!----------------------------------------downmenu----------------------------------------------------------------->
+<div id="downmenu">
+    <ul>
+
+        <li>
+            <a href="#">钻石</a>
+            <a href="#" class="three">30分</a>
+            <a href="#">50分</a>
+            <a href="#">异形</a>
+
+        </li>
+        <li>
+            <a href="#" class="four">金饰</a>
+            <a href="#">裸钻</a>
+            <a href="#">钻戒定制</a>
+
+        </li>
+        <li>
+            <a href="#" class="four">金饰</a>
+            <a href="#">裸钻</a>
+            <a href="#">钻戒定制</a>
+        </li>
+        <li>
+            <a href="#">戒指</a>
+            <a href="#" class="three">30分</a>
+            <a href="#">50分</a>
+            <a href="#">异形</a>
+        </li>
+        <li>
+            <a href="#" class="four">金饰</a>
+            <a href="#">裸钻</a>
+            <a href="#">钻戒定制</a>
+        </li>
+        <li>
+            <a href="#" class="four">金饰</a>
+            <a href="#">裸钻</a>
+            <a href="#">钻戒定制</a>
+        </li>
+        <li>
+            <a href="#">吊坠</a>
+            <a href="#" class="three">30分</a>
+            <a href="#">50分</a>
+            <a href="#">异形</a>
+        </li>
+        <li>
+            <a href="#" class="four">金饰</a>
+            <a href="#">裸钻</a>
+            <a href="#">钻戒定制</a>
+        </li>
+        <li>
+            <a href="#" class="four">金饰</a>
+            <a href="#">裸钻</a>
+            <a href="#">钻戒定制</a>
+        </li>
+        <li>
+            <a href="#">手链</a>
+            <a href="#" class="three">30分</a>
+            <a href="#">50分</a>
+            <a href="#">异形</a>
+        </li>
+        <li>
+            <a href="#" class="four">金饰</a>
+            <a href="#">裸钻</a>
+            <a href="#">钻戒定制</a>
+        </li>
+        <li>
+            <a href="#" class="four">金饰</a>
+            <a href="#">裸钻</a>
+            <a href="#">钻戒定制</a>
+        </li>
+        <li>
+            <a href="#">耳饰</a>
+            <a href="#" class="three">30分</a>
+            <a href="#">50分</a>
+            <a href="#">异形</a>
+        </li>
+        <li>
+            <a href="#" class="four">金饰</a>
+            <a href="#">裸钻</a>
+            <a href="#">钻戒定制</a>
+        </li>
+        <li>
+            <a href="#" class="four">金饰</a>
+            <a href="#">裸钻</a>
+            <a href="#">钻戒定制</a>
+        </li>
+    </ul>
+</div>
+
+<script type="text/html" id="goodslist">
+    <tr>
+        <td class="goodsimg" width="120" align="center"><img src={{src}}></td>
+        <td class="goodsdes" width="250" align="center">{{goodsdes}}</td>
+        <td class="goodsmodel" width="250" align="center">{{goodsmodel}}</td>
+        <td class="goodsprice" width="250" align="center">{{goodsprice}}</td>
+        <td class="delGoods" width="200" align="center">删除</td>
+    </tr>
+</script>
+</body>
+</html>

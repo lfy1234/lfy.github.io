@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <style>
+        #mistake{
+            color:red;
+            visibility:hidden;
+            font-size:14px;
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="mistake">用户或密码错误</div>
+
+<label>用户名:</label>
+<input type="text" id="user" placeholder="请输入用户名"><br><br>
+
+<label>密&nbsp;码:</label>
+<input type="text" id="password" placeholder="请输入密码"><br><br>
+
+<button id="login">登录</button>
+<a href="register.html">注册</a>
+
+<script src="../vendor/jQuery/jquery-1.12.1.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#login').click(function () {
+            var user = $('#user').val();
+            var paw = $('#password').val();
+            $.ajax({
+                type: 'post',
+                url: '/api/login',
+                data: {
+                    user: user,
+                    password: paw
+                },
+                success: function (data) {
+
+                    if (data.ret) {
+                        location.href = 'index.html';
+                    } else {
+                        $('mistake').css('visibility', 'visible');
+                    }
+                },
+
+                error: function (data) {
+                    alert(data.ret);
+                }
+
+            })
+
+
+        });
+
+        $('#user,#password').focus(function(){
+            $('mistake').css('visibility','hidden')
+        })
+
+
+    })
+</script>
+</body>
+</html>
